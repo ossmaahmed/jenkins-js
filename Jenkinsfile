@@ -39,7 +39,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f ${APP_NAME} || true
-                    docker run -d -p 5000:5000 --name ${APP_NAME} ${APP_NAME}:${BUILD_NUMBER}
+                    docker run -d -p 3306:3306 --name ${APP_NAME} ${APP_NAME}:${BUILD_NUMBER}
                     docker ps
                 '''
             }
